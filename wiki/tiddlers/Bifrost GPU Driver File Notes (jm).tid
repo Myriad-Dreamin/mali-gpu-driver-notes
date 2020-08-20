@@ -1,0 +1,12 @@
+created: 20200820144247264
+modified: 20200820144545199
+title: Bifrost GPU Driver File Notes (jm)
+type: text/vnd.tiddlywiki
+
++ `gpu/arm/midgard/jm/`
+
+  + `mali_kbase_js_defs.h`: Job Scheduler Type Definitions
+
+  + `mali_kbase_jm_defs.h`: Definitions (types, defines, etcs) specific to Job Manager Kbase. 比较重要的定义有：`kbase_jd_atom`，object representing the atom, containing the complete state and attributes of an atom; `kbase_jd_context`, per context object encapsulating all the Job dispatcher related state.
+
+  + `mali_kbase_js_ctx_attr.h`: Job Scheduler Context Attribute APIs: 操作的对象指针为`kbase_device`，相关属性为`kbasep_js_ctx_attr`，有简单的getter，并包含对象指针对`kbase_context`的操作方法。

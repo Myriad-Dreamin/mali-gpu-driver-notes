@@ -1,0 +1,57 @@
+created: 20200820153446381
+modified: 20200820153611178
+tags: 
+title: Bifrost High Level Functions (DMA)
+type: text/x-markdown
+
+## DMA Fence/Buffer Functions
+
+`dma_buf_lock_dounlock`
+
+`dma_buf_lock_exit`
+
+`dma_buf_lock_fence_callback`
+
+`dma_buf_lock_fence_enable_signaling`
+
+`dma_buf_lock_fence_get_driver_name`
+
+`dma_buf_lock_fence_get_timeline_name`
+
+`dma_buf_lock_handle_poll`
+
+`dma_buf_lock_handle_release`
+
+`dma_buf_lock_init`
+
+`dma_buf_lock_ioctl`
+
+`dma_buf_te_attach`
+
+`dma_buf_te_begin_cpu_access`
+
+`dma_buf_te_detach`
+
+`dma_buf_te_end_cpu_access`
+
+`dma_buf_te_exit`
+
+`dma_buf_te_init`
+
+`dma_buf_te_ioctl`
+
+`dma_buf_te_kmap_atomic`
+
+`dma_buf_te_map`
+
+`dma_buf_te_mmap`
+
+`dma_buf_te_mmap_close`
+
+`dma_buf_te_mmap_fault`
+
+`dma_buf_te_mmap_open`
+
+`dma_buf_te_release`
+
+`dma_buf_te_unmap`

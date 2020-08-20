@@ -1,0 +1,79 @@
+created: 20200820151501128
+modified: 20200820154347199
+tags: 
+title: Bifrost High Level Functions
+type: text/x-markdown
+
+## __kbase_tlstream
+
+[Bifrost High Level Functions (__kbase_tlstream)](#Bifrost%20High%20Level%20Functions%20%28__kbase_tlstream%29)
+
+## KBase
+
+[Bifrost High Level Functions (KBase)](#Bifrost%20High%20Level%20Functions%20%28KBase%29)
+
+## KBase API
+
+[Bifrost High Level Functions (KBase API)](#Bifrost%20High%20Level%20Functions%20%28KBase%20API%29)
+
+## KBase Device
+
+[Bifrost High Level Functions (KBase Device)](#Bifrost%20High%20Level%20Functions%20%28KBase%20Device%29)
+
+## Show Functions
+
+`show_core_mask`
+
+`show_debug`
+
+`show_dummy_job_wa_info`
+
+`show_dvfs_period`
+
+`show_js_ctx_scheduling_mode`
+
+`show_js_scheduling_period`
+
+`show_js_softstop_always`
+
+`show_js_timeouts`
+
+`show_lp_mem_pool_max_size`
+
+`show_lp_mem_pool_size`
+
+`show_mem_pool_max_size`
+
+`show_mem_pool_size`
+
+`show_pm_poweroff`
+
+`show_policy`
+
+`show_reset_timeout`
+
+`show_soft_job_timeout`
+
+`simple_pma_alloc_page`
+
+`simple_pma_free_page`
+
+`simple_pma_get_phys_addr`
+
+## Time Functions
+
+`timeline_compare`
+
+`timeline_dup`
+
+`timeline_has_signaled`
+
+`timeline_value_str`
+
+`timeout_ms_to_ticks`
+
+`timer_callback`
+
+----
+
+[Bifrost High Level Functions (unclassified)](#Bifrost%20High%20Level%20Functions%20%28unclassified%29)

@@ -1,0 +1,8 @@
+created: 20140207231004992
+dependents: 
+description: Adds support of MathJax
+modified: 20200820072408258
+plugin-type: plugin
+title: $:/plugins/kantorsite/mathjax
+type: application/json
+version: 5.0.12-beta

@@ -1,0 +1,14 @@
+created: 20200820143149197
+modified: 20200820144118195
+title: Bifrost GPU Driver File Notes (arbiter)
+type: text/x-markdown
+
++ `gpu/arm/midgard/arbiter/`
+
+  + `mali_kbase_arbiter_interface.h`: 定义`arbiter_if_dev`及其方法。
+
+  + `mali_kbase_arbiter_defs.h`: 包含`kbase_arbiter_vm_state`和`kbase_arbiter_device`，`kbase_arbiter_device`是`arbiter_if_dev`和`device`的结合，而`arbiter_if_dev`在`mali_kbase_arbiter_interface.h`中且有所有相关的操作方法（函数指针）。
+
+  + `mali_kbase_arbif.h`: 定义`kbase_arbif_evt`事件枚举类，以及`kbdev`为对象指针的各个对应操作函数。[Mali arbiter](https://www.arm.com/ja/company/news/2020/06/powering-next-generation-in-vehicle-experiences) interface APIs to share GPU between Virtual Machines。
+
+  + `mali_kbase_arbif.h`: 定义`kbase_vm_state`虚拟机状态枚举类，看起来就很像qemu相关？以及`kbdev`为对象指针的各个对应操作函数。[Mali arbiter](https://www.arm.com/ja/company/news/2020/06/powering-next-generation-in-vehicle-experiences) power manager state machine and APIs

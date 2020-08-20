@@ -1,0 +1,10 @@
+{
+    "tiddlers": {
+        "$:/plugins/kantorsite/mathjax/init.js": {
+            "text": "(function(){function e(e,t,n){var r=document.getElementsByTagName('head')[0]||document.documentElement;var i=document.createElement('script');if(typeof e=='function'){i[window.opera?'innerHTML':'text']='('+e.toString()+')()'}else if(typeof e=='string'){i.src=e}if(t){for(var s in t){if(t.hasOwnProperty(s)){i[s]=t[s]}}}var o=false;i.onload=i.onreadystatechange=function(){if(!o&&(!this.readyState||this.readyState=='loaded'||this.readyState=='complete')){o=true;i.onload=i.onreadystatechange=null;if(r&&i.parentNode){r.removeChild(i)}if(typeof n=='function'){n()}}};r.insertBefore(i,r.firstChild);return i}e(function(){MathJax.Hub.Config({tex2jax:{inlineMath:[['$','$'],['\\\\(','\\\\)']]}})},{type:'text/x-mathjax-config'});e('http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML',null,function(){e(function(){var e=window.MutationObserver||window.WebKitMutationObserver;if(!e){alert('MathJax plugin for TW5: Sorry, but current version of your browser is not supported!')}else{var t=new e(function(e,t){MathJax.Hub.Queue(['Typeset',MathJax.Hub])});var n=document.getElementsByClassName('story-river')[0];t.observe(n,{subtree:false,attributes:true,childList:true})}})})})()",
+            "title": "$:/plugins/kantorsite/mathjax/init.js",
+            "type": "application/javascript",
+            "module-type": "startup"
+        }
+    }
+}
