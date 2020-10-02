@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.22" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>Bifrost High Level Functions (__kbase_tlstream): Mali GPU Notes — some notes about mali gpu</title>
+</head>
+<body class="tc-body">
+
+<section class="tc-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists " data-tags="" data-tiddler-title="Bifrost High Level Functions (__kbase_tlstream)"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span></span><span><span class="tc-tiddler-title-icon" style="fill:;"></span><h2 class="tc-title">Bifrost High Level Functions (__kbase_tlstream)</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a>20th August 2020 at 3:41pm</div></div><div class=" tc-reveal">
+<div class="tc-tags-wrapper"></div>
+</div>
+
+<div class="tc-tiddler-body tc-reveal"><div><p><code>__kbase_tlstream_aux_devfreq_target</code></p>
+<p><code>__kbase_tlstream_aux_event_job_slot</code></p>
+<p><code>__kbase_tlstream_aux_jit_stats</code></p>
+<p><code>__kbase_tlstream_aux_pagefault</code></p>
+<p><code>__kbase_tlstream_aux_pagesalloc</code></p>
+<p><code>__kbase_tlstream_aux_pm_state</code></p>
+<p><code>__kbase_tlstream_aux_protected_enter_end</code></p>
+<p><code>__kbase_tlstream_aux_protected_enter_start</code></p>
+<p><code>__kbase_tlstream_aux_protected_leave_end</code></p>
+<p><code>__kbase_tlstream_aux_protected_leave_start</code></p>
+<p><code>__kbase_tlstream_jd_gpu_soft_reset</code></p>
+<p><code>__kbase_tlstream_tl_attrib_as_config</code></p>
+<p><code>__kbase_tlstream_tl_attrib_atom_config</code></p>
+<p><code>__kbase_tlstream_tl_attrib_atom_jit</code></p>
+<p><code>__kbase_tlstream_tl_attrib_atom_jitallocinfo</code></p>
+<p><code>__kbase_tlstream_tl_attrib_atom_jitfreeinfo</code></p>
+<p><code>__kbase_tlstream_tl_attrib_atom_prioritized</code></p>
+<p><code>__kbase_tlstream_tl_attrib_atom_priority</code></p>
+<p><code>__kbase_tlstream_tl_attrib_atom_state</code></p>
+<p><code>__kbase_tlstream_tl_del_atom</code></p>
+<p><code>__kbase_tlstream_tl_del_ctx</code></p>
+<p><code>__kbase_tlstream_tl_event_arb_granted</code></p>
+<p><code>__kbase_tlstream_tl_event_arb_started</code></p>
+<p><code>__kbase_tlstream_tl_event_arb_stop_requested</code></p>
+<p><code>__kbase_tlstream_tl_event_arb_stopped</code></p>
+<p><code>__kbase_tlstream_tl_event_atom_softjob_end</code></p>
+<p><code>__kbase_tlstream_tl_event_atom_softjob_start</code></p>
+<p><code>__kbase_tlstream_tl_event_atom_softstop_ex</code></p>
+<p><code>__kbase_tlstream_tl_event_atom_softstop_issue</code></p>
+<p><code>__kbase_tlstream_tl_event_lpu_softstop</code></p>
+<p><code>__kbase_tlstream_tl_jit_usedpages</code></p>
+<p><code>__kbase_tlstream_tl_kbase_array_begin_kcpuqueue_enqueue_cqs_set</code></p>
+<p><code>__kbase_tlstream_tl_kbase_array_begin_kcpuqueue_enqueue_cqs_wait</code></p>
+<p><code>__kbase_tlstream_tl_kbase_array_begin_kcpuqueue_enqueue_debugcopy</code></p>
+<p><code>__kbase_tlstream_tl_kbase_array_begin_kcpuqueue_enqueue_jit_alloc</code></p>
+<p><code>__kbase_tlstream_tl_kbase_array_begin_kcpuqueue_enqueue_jit_free</code></p>
+<p><code>__kbase_tlstream_tl_kbase_array_begin_kcpuqueue_execute_jit_alloc_end</code></p>
+<p><code>__kbase_tlstream_tl_kbase_array_begin_kcpuqueue_execute_jit_free_end</code></p>
+<p><code>__kbase_tlstream_tl_kbase_array_end_kcpuqueue_enqueue_cqs_set</code></p>
+<p><code>__kbase_tlstream_tl_kbase_array_end_kcpuqueue_enqueue_cqs_wait</code></p>
+<p><code>__kbase_tlstream_tl_kbase_array_end_kcpuqueue_enqueue_debugcopy</code></p>
+<p><code>__kbase_tlstream_tl_kbase_array_end_kcpuqueue_enqueue_jit_alloc</code></p>
+<p><code>__kbase_tlstream_tl_kbase_array_end_kcpuqueue_enqueue_jit_free</code></p>
+<p><code>__kbase_tlstream_tl_kbase_array_end_kcpuqueue_execute_jit_alloc_end</code></p>
+<p><code>__kbase_tlstream_tl_kbase_array_end_kcpuqueue_execute_jit_free_end</code></p>
+<p><code>__kbase_tlstream_tl_kbase_array_item_kcpuqueue_enqueue_cqs_set</code></p>
+<p><code>__kbase_tlstream_tl_kbase_array_item_kcpuqueue_enqueue_cqs_wait</code></p>
+<p><code>__kbase_tlstream_tl_kbase_array_item_kcpuqueue_enqueue_debugcopy</code></p>
+<p><code>__kbase_tlstream_tl_kbase_array_item_kcpuqueue_enqueue_jit_alloc</code></p>
+<p><code>__kbase_tlstream_tl_kbase_array_item_kcpuqueue_enqueue_jit_free</code></p>
+<p><code>__kbase_tlstream_tl_kbase_array_item_kcpuqueue_execute_jit_alloc_end</code></p>
+<p><code>__kbase_tlstream_tl_kbase_array_item_kcpuqueue_execute_jit_free_end</code></p>
+<p><code>__kbase_tlstream_tl_kbase_csffw_tlstream_overflow</code></p>
+<p><code>__kbase_tlstream_tl_kbase_ctx_assign_as</code></p>
+<p><code>__kbase_tlstream_tl_kbase_ctx_unassign_as</code></p>
+<p><code>__kbase_tlstream_tl_kbase_del_ctx</code></p>
+<p><code>__kbase_tlstream_tl_kbase_del_kcpuqueue</code></p>
+<p><code>__kbase_tlstream_tl_kbase_device_deprogram_csg</code></p>
+<p><code>__kbase_tlstream_tl_kbase_device_program_csg</code></p>
+<p><code>__kbase_tlstream_tl_kbase_kcpuqueue_enqueue_fence_signal</code></p>
+<p><code>__kbase_tlstream_tl_kbase_kcpuqueue_enqueue_fence_wait</code></p>
+<p><code>__kbase_tlstream_tl_kbase_kcpuqueue_enqueue_map_import</code></p>
+<p><code>__kbase_tlstream_tl_kbase_kcpuqueue_enqueue_unmap_import</code></p>
+<p><code>__kbase_tlstream_tl_kbase_kcpuqueue_enqueue_unmap_import_force</code></p>
+<p><code>__kbase_tlstream_tl_kbase_kcpuqueue_execute_cqs_set</code></p>
+<p><code>__kbase_tlstream_tl_kbase_kcpuqueue_execute_cqs_wait_end</code></p>
+<p><code>__kbase_tlstream_tl_kbase_kcpuqueue_execute_cqs_wait_start</code></p>
+<p><code>__kbase_tlstream_tl_kbase_kcpuqueue_execute_debugcopy_end</code></p>
+<p><code>__kbase_tlstream_tl_kbase_kcpuqueue_execute_debugcopy_start</code></p>
+<p><code>__kbase_tlstream_tl_kbase_kcpuqueue_execute_errorbarrier</code></p>
+<p><code>__kbase_tlstream_tl_kbase_kcpuqueue_execute_fence_signal_end</code></p>
+<p><code>__kbase_tlstream_tl_kbase_kcpuqueue_execute_fence_signal_start</code></p>
+<p><code>__kbase_tlstream_tl_kbase_kcpuqueue_execute_fence_wait_end</code></p>
+<p><code>__kbase_tlstream_tl_kbase_kcpuqueue_execute_fence_wait_start</code></p>
+<p><code>__kbase_tlstream_tl_kbase_kcpuqueue_execute_jit_alloc_start</code></p>
+<p><code>__kbase_tlstream_tl_kbase_kcpuqueue_execute_jit_free_start</code></p>
+<p><code>__kbase_tlstream_tl_kbase_kcpuqueue_execute_map_import_end</code></p>
+<p><code>__kbase_tlstream_tl_kbase_kcpuqueue_execute_map_import_start</code></p>
+<p><code>__kbase_tlstream_tl_kbase_kcpuqueue_execute_unmap_import_end</code></p>
+<p><code>__kbase_tlstream_tl_kbase_kcpuqueue_execute_unmap_import_force_end</code></p>
+<p><code>__kbase_tlstream_tl_kbase_kcpuqueue_execute_unmap_import_force_start</code></p>
+<p><code>__kbase_tlstream_tl_kbase_kcpuqueue_execute_unmap_import_start</code></p>
+<p><code>__kbase_tlstream_tl_kbase_new_ctx</code></p>
+<p><code>__kbase_tlstream_tl_kbase_new_device</code></p>
+<p><code>__kbase_tlstream_tl_kbase_new_kcpuqueue</code></p>
+<p><code>__kbase_tlstream_tl_new_atom</code></p>
+<p><code>__kbase_tlstream_tl_nret_as_ctx</code></p>
+<p><code>__kbase_tlstream_tl_nret_atom_as</code></p>
+<p><code>__kbase_tlstream_tl_nret_atom_ctx</code></p>
+<p><code>__kbase_tlstream_tl_nret_atom_lpu</code></p>
+<p><code>__kbase_tlstream_tl_nret_ctx_lpu</code></p>
+<p><code>__kbase_tlstream_tl_ret_as_ctx</code></p>
+<p><code>__kbase_tlstream_tl_ret_atom_as</code></p>
+<p><code>__kbase_tlstream_tl_ret_atom_ctx</code></p>
+<p><code>__kbase_tlstream_tl_ret_atom_lpu</code></p>
+<p><code>__kbase_tlstream_tl_ret_ctx_lpu</code></p>
+</div></div>
+
+
+
+</div>
+
+</p>
+</section>
+</body>
+</html>

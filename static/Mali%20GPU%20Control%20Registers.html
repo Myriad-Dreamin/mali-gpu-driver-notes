@@ -1,0 +1,358 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.22" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>Mali GPU Control Registers: Mali GPU Notes — some notes about mali gpu</title>
+</head>
+<body class="tc-body">
+
+<section class="tc-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists " data-tags="" data-tiddler-title="Mali GPU Control Registers"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span></span><span><span class="tc-tiddler-title-icon" style="fill:;"></span><h2 class="tc-title">Mali GPU Control Registers</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a>20th August 2020 at 10:28am</div></div><div class=" tc-reveal">
+<div class="tc-tags-wrapper"></div>
+</div>
+
+<div class="tc-tiddler-body tc-reveal"><div><h2>GPU General Control Registers</h2>
+<h3>Read Only Registers</h3>
+<ul>
+<li>
+<p><code>GPU_ID</code></p>
+</li>
+<li>
+<p><code>*_FEATURES</code></p>
+<ul>
+<li>
+<p><code>L2</code>: Level 2 cache features</p>
+</li>
+<li>
+<p><code>TILER</code>: Tiler features</p>
+</li>
+<li>
+<p><code>MEM</code>: Memory system features</p>
+</li>
+<li>
+<p><code>MMU</code>: MMU features</p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>GPU_IRQ_STATUS</code></p>
+</li>
+<li>
+<p><code>GPU_STATUS</code></p>
+</li>
+<li>
+<p><code>GPU_FAULTSTATUS</code></p>
+</li>
+<li>
+<p><code>GPU_FAULTADDRESS(LO, HI)</code></p>
+</li>
+<li>
+<p><code>GPU_FAULTSTATUS</code></p>
+</li>
+<li>
+<p><code>CYCLE_COUNT(LO, HI)</code></p>
+</li>
+<li>
+<p><code>TIMESTAMP(LO, HI)</code></p>
+</li>
+<li>
+<p><code>THREAD_MAX_THREADS</code></p>
+</li>
+<li>
+<p><code>THREAD_MAX_WORKGROUP_SIZE</code></p>
+</li>
+<li>
+<p><code>THREAD_MAX_BARRIER_SIZE</code></p>
+</li>
+<li>
+<p><code>THREAD_FEATURES</code></p>
+</li>
+<li>
+<p><code>THREAD_TLS_ALLOC</code></p>
+</li>
+<li>
+<p><code>TEXTURE_FEATURES(n)</code></p>
+</li>
+<li>
+<p><code>SHADER_PRESENT_LO</code></p>
+</li>
+<li>
+<p><code>TILER_PRESENT_LO</code></p>
+</li>
+<li>
+<p><code>L2_PRESENT_LO</code></p>
+</li>
+<li>
+<p><code>STACK_PRESENT_LO</code></p>
+</li>
+<li>
+<p><code>SHADER_READY_LO</code></p>
+</li>
+<li>
+<p><code>TILER_READY_LO</code></p>
+</li>
+<li>
+<p><code>L2_READY_LO</code></p>
+</li>
+<li>
+<p><code>TILER_READY_LO</code></p>
+</li>
+<li>
+<p><code>STACK_READY_LO</code></p>
+</li>
+<li>
+<p><code>STACK_PWRON_LO</code></p>
+</li>
+<li>
+<p><code>STACK_PWROFF_LO</code></p>
+</li>
+<li>
+<p><code>SHADER_PWRTRANS_LO</code></p>
+</li>
+<li>
+<p><code>TILER_PWRTRANS_LO</code></p>
+</li>
+<li>
+<p><code>L2_PWRTRANS_LO</code></p>
+</li>
+<li>
+<p><code>STACK_PWRTRANS_LO</code></p>
+</li>
+<li>
+<p><code>SHADER_PWRACTIVE_LO</code></p>
+</li>
+<li>
+<p><code>TILER_PWRACTIVE_LO</code></p>
+</li>
+<li>
+<p><code>L2_PWRACTIVE_LO</code></p>
+</li>
+<li>
+<p><code>COHERENCY_FEATURES</code></p>
+</li>
+<li>
+<p><code>L2_PWRON_LO</code></p>
+</li>
+<li>
+<p><code>L2_PWRON_LO</code></p>
+</li>
+</ul>
+<h3>Write Only Registers</h3>
+<ul>
+<li>
+<p><code>GPU_IRQ_CLEAR</code></p>
+</li>
+<li>
+<p><code>GPU_COMMAND</code></p>
+</li>
+<li>
+<p><code>PWR_KEY</code></p>
+</li>
+<li>
+<p><code>PWR_OVERRIDE0</code></p>
+</li>
+<li>
+<p><code>PWR_KEY</code></p>
+</li>
+<li>
+<p><code>PWR_KEY</code></p>
+</li>
+<li>
+<p><code>SHADER_PWRON_LO</code></p>
+</li>
+<li>
+<p><code>TILER_PWRON_LO</code></p>
+</li>
+<li>
+<p><code>L2_PWRON_LO</code></p>
+</li>
+<li>
+<p><code>SHADER_PWROFF_LO</code></p>
+</li>
+<li>
+<p><code>TILER_PWROFF_LO</code></p>
+</li>
+<li>
+<p><code>L2_PWROFF_LO</code></p>
+</li>
+<li>
+<p><code>L2_PWRON_LO</code></p>
+</li>
+<li>
+<p><code>L2_PWRON_LO</code></p>
+</li>
+<li>
+<p><code>L2_PWRON_LO</code></p>
+</li>
+<li>
+<p><code>L2_PWRON_LO</code></p>
+</li>
+<li>
+<p><code>L2_PWRON_LO</code></p>
+</li>
+</ul>
+<h3>Read-Write Registers</h3>
+<ul>
+<li>
+<p><code>GPU_IRQ_RAWSTAT</code></p>
+</li>
+<li>
+<p><code>GPU_IRQ_MASK</code></p>
+</li>
+<li>
+<p><code>L2_CONFIG</code></p>
+</li>
+<li>
+<p><code>PWR_OVERRIDE0</code></p>
+</li>
+<li>
+<p><code>PWR_OVERRIDE1</code></p>
+</li>
+<li>
+<p><code>COHERENCY_ENABLE</code></p>
+</li>
+<li>
+<p><code>SHADER_CONFIG</code></p>
+</li>
+<li>
+<p><code>TILER_CONFIG</code></p>
+</li>
+<li>
+<p><code>L2_MMU_CONFIG</code></p>
+</li>
+<li>
+<p><code>JOB_*</code>: Job control registers</p>
+</li>
+<li>
+<p><code>MMU_*</code>: MMU control registers</p>
+</li>
+<li>
+<p><code>AS_*</code>: MMU address space control registers</p>
+</li>
+</ul>
+<h2>Job Manage Registers</h2>
+<h3>Read Only Registers</h3>
+<ul>
+<li>
+<p><code>CORE_FEATURES</code>: Shader Core Features</p>
+</li>
+<li>
+<p><code>JS_PRESENT</code>: Job slots present</p>
+</li>
+<li>
+<p><code>LATEST_FLUSH</code>: Flush ID of latest clean-and-invalidate operation</p>
+</li>
+<li>
+<p><code>JS_FEATURES_REG(n)</code>: Features of job slot <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>⩽</mo><mi>n</mi><mo>&lt;</mo><msup><mn>2</mn><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">0 \leqslant n &lt; 2^4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78111em;vertical-align:-0.13667em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">⩽</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span>)</p>
+<ul>
+<li>values: <code>NULL_JOB</code>, <code>SET_VALUE_JOB</code>, <code>CACHE_FLUSH_JOB</code>, <code>COMPUTE_JOB</code>, <code>VERTEX_JOB</code>, <code>GEOMETRY_JOB</code>, <code>TILER_JOB</code>, <code>FUSED_JOB</code>, <code>FRAGMENT_JOB</code></li>
+</ul>
+</li>
+<li>
+<p><code>JS_HEAD(LO, HI)</code>: Job queue head pointer for job slot <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span></p>
+</li>
+<li>
+<p><code>JS_TAIL(LO, HI)</code>: Job queue tail pointer for job slot <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span></p>
+</li>
+<li>
+<p><code>JS_AFFINITY(LO, HI)</code>: Core affinity mask for job slot <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span></p>
+</li>
+<li>
+<p><code>JS_XAFFINITY</code></p>
+</li>
+</ul>
+<h3>Write Only Registers</h3>
+<ul>
+<li>
+<p><code>JS_COMMAND</code></p>
+<ul>
+<li>values: <code>NOP</code>, <code>START</code>, <code>SOFT_STOP</code>, <code>HARD_STOP</code>, <code>SOFT_STOP_0</code>, <code>HARD_STOP_0</code>, <code>SOFT_STOP_1</code>, <code>HARD_STOP_1</code></li>
+<li>mask: 0x07</li>
+</ul>
+</li>
+</ul>
+<h3>Read-Write Registers</h3>
+<ul>
+<li>
+<p><code>PRFCNT</code>: Performance counter related control registers</p>
+<ul>
+<li><code>BASE_LO</code>/<code>BASE_HI</code>: memory region base address, low/high word</li>
+</ul>
+</li>
+<li>
+<p><code>JM_CONFIG</code>: Job manager configuration (implementation-specific)</p>
+<ul>
+<li>values: <code>TIMESTAMP_OVERRIDE</code>, <code>CLOCK_GATE_OVERRIDE</code>, <code>JOB_THROTTLE_ENABLE</code>, <code>JOB_THROTTLE_LIMIT_SHIFT</code>, <code>MAX_JOB_THROTTLE_LIMIT</code>, <code>FORCE_COHERENCY_FEATURES_SHIFT</code></li>
+</ul>
+</li>
+<li>
+<p><code>JOB_IRQ_JS_STATE</code></p>
+</li>
+<li>
+<p><code>JOB_IRQ_THROTTLE</code></p>
+</li>
+<li>
+<p><code>JOB_SLOT_REG(n, r)</code> the <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span>-th register of job slot <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>⩽</mo><mi>n</mi><mo>&lt;</mo><msup><mn>2</mn><mn>4</mn></msup><mo separator="true">,</mo><mi>r</mi><mo>&lt;</mo><mn>32</mn></mrow><annotation encoding="application/x-tex">0 \leqslant n &lt; 2^4, r &lt; 32</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78111em;vertical-align:-0.13667em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">⩽</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span><span class="mord">2</span></span></span></span>?)</p>
+</li>
+<li>
+<p><code>JS_CONFIG</code></p>
+<ul>
+<li>values: <code>START_FLUSH_NO_ACTION</code>, <code>START_FLUSH_CLEAN</code>, <code>START_FLUSH_CLEAN_INVALIDATE</code>, <code>START_MMU</code>, <code>JOB_CHAIN_FLAG</code>, <code>END_FLUSH_NO_ACTION</code>, <code>END_FLUSH_CLEAN</code>, <code>END_FLUSH_CLEAN_INVALIDATE</code>, <code>ENABLE_FLUSH_REDUCTION</code>, <code>DISABLE_DESCRIPTOR_WR_BK</code>, <code>THREAD_PRI(n)</code></li>
+</ul>
+</li>
+<li>
+<p><code>JS_STATUS</code></p>
+<ul>
+<li>values:
+<ul>
+<li>Group of values representing the job status instead of a particular fault: <code>INTERRUPTED</code>, <code>STOPPED</code>, <code>TERMINATED</code></li>
+<li>General fault values: <code>CONFIG_FAULT</code>, <code>POWER_FAULT</code>, <code>READ_FAULT</code>, <code>WRITE_FAULT</code>, <code>AFFINITY_FAULT</code>, <code>BUS_FAULT</code></li>
+<li>Instruction or data faults: <code>INSTR_INVALID_PC</code>, <code>INSTR_INVALID_ENC</code>, <code>INSTR_TYPE_MISMATCH</code>, <code>INSTR_OPERAND_FAULT</code>, <code>INSTR_TLS_FAULT</code>, <code>INSTR_BARRIER_FAULT</code>, <code>INSTR_ALIGN_FAULT</code>, <code>DATA_INVALID_FAULT</code>, <code>TILE_RANGE_FAULT</code>, <code>ADDRESS_RANGE_FAULT</code></li>
+<li>Other faults: <code>OUT_OF_MEMORY</code>, <code>UNKNOWN</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>JS_HEAD_NEXT</code></p>
+</li>
+<li>
+<p><code>JS_AFFINITY_NEXT</code></p>
+</li>
+<li>
+<p><code>JS_CONFIG_NEXT</code></p>
+</li>
+<li>
+<p><code>JS_XAFFINITY_NEXT</code></p>
+</li>
+<li>
+<p><code>JS_COMMAND_NEXT</code></p>
+</li>
+<li>
+<p><code>JS_FLUSH_ID_NEXT</code></p>
+</li>
+</ul>
+<h3>unknown values</h3>
+<ul>
+<li><code>GPU_COMMAND</code>: NOP, SOFT_RESET, HARD_RESET, PRFCNT_CLEAR, PRFCNT_SAMPLE, CYCLE_COUNT_START, CYCLE_COUNT_STOP, CLEAN_CACHES, CLEAN_INV_CACHES, SET_PROTECTED_MODE</li>
+</ul>
+</div></div>
+
+
+
+</div>
+
+</p>
+</section>
+</body>
+</html>

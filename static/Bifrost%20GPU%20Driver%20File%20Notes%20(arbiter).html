@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.22" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>Bifrost GPU Driver File Notes (arbiter): Mali GPU Notes — some notes about mali gpu</title>
+</head>
+<body class="tc-body">
+
+<section class="tc-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists " data-tags="" data-tiddler-title="Bifrost GPU Driver File Notes (arbiter)"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span></span><span><span class="tc-tiddler-title-icon" style="fill:;"></span><h2 class="tc-title">Bifrost GPU Driver File Notes (arbiter)</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a>20th August 2020 at 2:41pm</div></div><div class=" tc-reveal">
+<div class="tc-tags-wrapper"></div>
+</div>
+
+<div class="tc-tiddler-body tc-reveal"><div><ul>
+<li>
+<p><code>gpu/arm/midgard/arbiter/</code></p>
+<ul>
+<li>
+<p><code>mali_kbase_arbiter_interface.h</code>: 定义<code>arbiter_if_dev</code>及其方法。</p>
+</li>
+<li>
+<p><code>mali_kbase_arbiter_defs.h</code>: 包含<code>kbase_arbiter_vm_state</code>和<code>kbase_arbiter_device</code>，<code>kbase_arbiter_device</code>是<code>arbiter_if_dev</code>和<code>device</code>的结合，而<code>arbiter_if_dev</code>在<code>mali_kbase_arbiter_interface.h</code>中且有所有相关的操作方法（函数指针）。</p>
+</li>
+<li>
+<p><code>mali_kbase_arbif.h</code>: 定义<code>kbase_arbif_evt</code>事件枚举类，以及<code>kbdev</code>为对象指针的各个对应操作函数。<a href="https://www.arm.com/ja/company/news/2020/06/powering-next-generation-in-vehicle-experiences">Mali arbiter</a> interface APIs to share GPU between Virtual Machines。</p>
+</li>
+<li>
+<p><code>mali_kbase_arbif.h</code>: 定义<code>kbase_vm_state</code>虚拟机状态枚举类，看起来就很像qemu相关？以及<code>kbdev</code>为对象指针的各个对应操作函数。<a href="https://www.arm.com/ja/company/news/2020/06/powering-next-generation-in-vehicle-experiences">Mali arbiter</a> power manager state machine and APIs</p>
+</li>
+</ul>
+</li>
+</ul>
+</div></div>
+
+
+
+</div>
+
+</p>
+</section>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.22" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>Bifrost GPU Driver File Notes: Mali GPU Notes — some notes about mali gpu</title>
+</head>
+<body class="tc-body">
+
+<section class="tc-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists " data-tags="" data-tiddler-title="Bifrost GPU Driver File Notes"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span></span><span><span class="tc-tiddler-title-icon" style="fill:;"></span><h2 class="tc-title">Bifrost GPU Driver File Notes</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-missing" href=".html"></a>21st September 2020 at 8:12am</div></div><div class=" tc-reveal">
+<div class="tc-tags-wrapper"></div>
+</div>
+
+<div class="tc-tiddler-body tc-reveal"><div><ul>
+<li>
+<p><code>gpu/arm/midgard/</code></p>
+<ul>
+<li>
+<p><code>device\backend\mali_kbase_device_jm.c</code>: 提供<code>kbase_device_init</code>和<code>kbase_device_term</code>两个函数，<code>kbase_device_init</code>按照<code>dev_init</code>数组依次初始化设备不同部分，其中较为特殊的、初始化函数分别为<code>kbase_device_early_init</code>和<code>kbase_backend_late_init</code>，这两个函数里又有许多固定顺序的初始化函数。</p>
+</li>
+<li>
+<p><code>mali_base_kernel.h</code>: 主要是两种类型<code>base_mem_alloc_flags</code>和<code>base_context_create_flags</code>的定义和操作。并且包含大量GPU Properties的定义，这些定义基本对应GPU寄存器。对这些属性的查询称为User-side Base GPU Property Queries。</p>
+</li>
+<li>
+<p><code>mali_base_hwconfig_features.h</code>: 有一个枚举类<code>base_hw_feature</code>，以及所有GPU型别对应拥有的feature列表。</p>
+</li>
+<li>
+<p><code>mali_base_hwconfig_issues.h</code>: 定义一个枚举类<code>base_hw_issue</code>，以及所有GPU型别对应拥有的issue列表。</p>
+</li>
+<li>
+<p><code>mali_base_mem_priv.h</code>: 定义了CPU/GPU内存同步的原语和结构。</p>
+</li>
+<li>
+<p><code>mali_kbase_defs.h</code>: 其中有两个主要的结构体定义，分别是：<code>kbase_device</code>和<code>kbase_context</code>。</p>
+</li>
+<li>
+<p><code>mali_kbase_gpu_fault.h</code>: 声明将<code>exception_code</code>、<code>fatal_exception_code</code>或<code>fault_status</code>转化为字符串的辅助函数。</p>
+</li>
+<li>
+<p><code>mali_base_mem_priv.h</code>: 定义一个结构体basep_syncset. This structure describe a basic memory coherency operation.</p>
+</li>
+<li>
+<p><code>mali_kbase_mem_lowlevel.h</code>: 定义一个结构体basep_syncset. This structure describe a basic memory coherency operation.</p>
+</li>
+<li>
+<p><code>mali_kbase_hwcnt_backend.h</code>: 定义<code>kbase_hwcnt_backend_interface</code>以及它的所有c-style的method指针。</p>
+</li>
+<li>
+<p><code>mali_kbase_hwcnt_backend_gpu.h</code>: 定义<code>kbase_hwcnt_backend_interface</code>的Create和Destroy函数，Create函数接受一个<code>kbase_device</code>。</p>
+</li>
+<li>
+<p><code>mali_kbase_hwaccess_defs.h</code>: 定义<code>tagged_addr</code>, 这是一个页表相关的物理地址，内含一个<code>linux/dma-mapping.h</code>的<code>phys_addr_t</code>，页表tag和转换相关操作在此。</p>
+</li>
+<li>
+<p><code>protected_mode_switcher.h</code>: 定义<code>protected_mode_device</code>，当mode switch时，callback内含的ops。</p>
+</li>
+<li>
+<p><code>mali_kbase_gpuprops_types.h</code>: 包含<code>mali_base_kernel.h</code>，并增加一些gpuprops，这些几乎与regmap中定义一一对应。</p>
+</li>
+<li>
+<p><code>mali_kbase_fence_defs.h</code>: 因为kernel在4.10的时候发生了重命名，因此启用该头文件进行适配<code>&lt;linux/dma-fence.h&gt;</code>，参考<a href="https://www.kernel.org/doc/html/v4.10/driver-api/dma-buf.html">Linux DMA Fence</a></p>
+</li>
+<li>
+<p><a href="#Bifrost%20GPU%20Driver%20File%20Notes%20(arbiter)">Bifrost GPU Driver File Notes (arbiter)</a></p>
+</li>
+<li>
+<p><a href="#Bifrost%20GPU%20Driver%20File%20Notes%20(jm)">Bifrost GPU Driver File Notes (jm)</a></p>
+</li>
+<li>
+<p><code>backend/gpu</code></p>
+<ul>
+<li><code>mali_kbase_jm_defs.h</code>: 主要定义一个<code>kbase_backend_data</code>，内嵌一个<code>slot_rb &gt; rb_entry</code>的RingBuffer数据结构，同样在该头文件定义。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div></div>
+
+
+
+</div>
+
+</p>
+</section>
+</body>
+</html>
