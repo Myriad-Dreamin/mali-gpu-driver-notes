@@ -1,11 +1,19 @@
 created: 20200820112152523
-modified: 20200820145828971
+modified: 20200921081252263
 title: Bifrost GPU Driver File Notes
 type: text/x-markdown
 
 + `gpu/arm/midgard/`
 
+  + `device\backend\mali_kbase_device_jm.c`: 提供`kbase_device_init`和`kbase_device_term`两个函数，`kbase_device_init`按照`dev_init`数组依次初始化设备不同部分，其中较为特殊的、初始化函数分别为`kbase_device_early_init`和`kbase_backend_late_init`，这两个函数里又有许多固定顺序的初始化函数。
+
   + `mali_base_kernel.h`: 主要是两种类型`base_mem_alloc_flags`和`base_context_create_flags`的定义和操作。并且包含大量GPU Properties的定义，这些定义基本对应GPU寄存器。对这些属性的查询称为User-side Base GPU Property Queries。
+
+  + `mali_base_hwconfig_features.h`: 有一个枚举类`base_hw_feature`，以及所有GPU型别对应拥有的feature列表。
+
+  + `mali_base_hwconfig_issues.h`: 定义一个枚举类`base_hw_issue`，以及所有GPU型别对应拥有的issue列表。
+
+  + `mali_base_mem_priv.h`: 定义了CPU/GPU内存同步的原语和结构。
 
   + `mali_kbase_defs.h`: 其中有两个主要的结构体定义，分别是：`kbase_device`和`kbase_context`。
 
@@ -24,11 +32,6 @@ type: text/x-markdown
   + `protected_mode_switcher.h`: 定义`protected_mode_device`，当mode switch时，callback内含的ops。
 
   + `mali_kbase_gpuprops_types.h`: 包含`mali_base_kernel.h`，并增加一些gpuprops，这些几乎与regmap中定义一一对应。
-
-  + `mali_base_hwconfig_features.h`: 有一个枚举类`base_hw_feature`，以及所有GPU型别对应拥有的feature列表。
-
-  + `mali_base_hwconfig_issues.h`: 定义一个枚举类`base_hw_issue`，以及所有GPU型别对应拥有的issue列表。
-
   + `mali_kbase_fence_defs.h`: 因为kernel在4.10的时候发生了重命名，因此启用该头文件进行适配`<linux/dma-fence.h>`，参考[Linux DMA Fence](https://www.kernel.org/doc/html/v4.10/driver-api/dma-buf.html)
 
   + [Bifrost GPU Driver File Notes (arbiter)](#Bifrost%20GPU%20Driver%20File%20Notes%20(arbiter))

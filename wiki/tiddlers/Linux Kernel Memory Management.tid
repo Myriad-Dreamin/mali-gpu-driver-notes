@@ -1,0 +1,7 @@
+created: 20200820193547909
+modified: 20200820193617489
+tags: 
+title: Linux Kernel Memory Management
+type: text/vnd.tiddlywiki
+
+https://stackoverflow.com/questions/19100536/what-is-the-use-of-iomem-in-linux-while-writing-device-drivers

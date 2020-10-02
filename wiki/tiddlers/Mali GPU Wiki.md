@@ -8,3 +8,5 @@
 + [Bifrost GPU Driver File Notes](#Bifrost%20GPU%20Driver%20File%20Notes)
 
 + [Bifrost High Level Functions](#Bifrost%20High%20Level%20Functions)
+
++ [Bifrost KBase Job Manager/Scheduler](#Bifrost%20KBase%20Job%20Manager%2FScheduler)
